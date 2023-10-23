@@ -1,4 +1,4 @@
-import { mappingArticles } from "../../utils/utils"
+import { ArticleCards } from "./ArticleCard"
 import { useEffect,useState } from "react"
 import { getAllArticles } from "../../api"
 export const Articles = () =>{
@@ -16,7 +16,7 @@ export const Articles = () =>{
           {!isLoading ? (
             <div>
             <h2>Please see all articles below</h2>
-            <main>{mappingArticles(allArticles)}</main>
+            <main> {<ArticleCards allArticles = {allArticles}/>} </main>
             </div>
           ) : (
             <h2>Loading....</h2>
