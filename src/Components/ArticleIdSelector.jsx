@@ -35,7 +35,7 @@ export const ArticleIdSelector = () =>{
         const value = event.target.value
         setCurrentId(Number(value))
     }}></input>
-    <button>Go to Item!</button>
+    <button>Go to Article!</button>
     </form>
     </div>
     </div>
