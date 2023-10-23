@@ -35,6 +35,25 @@ h2{
 .each-article{
     align-items: center;
     text-align: center;
-    im
-
+}
+#navBar{
+    display: flex;
+   justify-content: space-around;
+}
+nav{
+    display: flex;
+    text-align: center;
+}
+a{
+    padding-right: 20px;
+    padding-left: 20px;
+}
+#formDiv{
+    text-align: center;
+}
+label {
+    margin-right: 20px;
+}
+input {
+    margin-right: 20px;
 }

@@ -9,3 +9,12 @@ export const getAllArticles = () =>{
 
     })
 }
+export const getSpecifcArticle=(myId)=>{
+    return NcApi.get(`/articles/${myId}`).then((res) =>{
+        return res.data.myArticle
+    }).catch((err) =>{
+        console.log(typeof(err.response.status))
+        return err
+    })
+}
+getSpecifcArticle(2)
