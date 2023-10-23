@@ -8,8 +8,10 @@ export const ArticleIdSelector = () =>{
     const [press,setPress] = useState(false)
     const navigate = useNavigate()
     function submitHandler(event){
-        setPress(true)
         event.preventDefault()
+        const myPress = setPress(true)
+        const myId = setFinalId(currentID)
+        Promise.all([myId,myPress])
         if (press){
         setFinalId(() =>{
             return currentID
