@@ -15,8 +15,9 @@ export const SpecificArticleCard = ({onlyArticle, Id}) =>{
                 <CommentsMapped Id={Id} />
             </div>) : (
                 <div>
-                    <h3>Incorrect Id Given!</h3>
+                    <h3>Invalid Article ID</h3>
                 </div>
+                
             )}
             </div>)
 
