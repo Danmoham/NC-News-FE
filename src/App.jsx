@@ -17,6 +17,7 @@ function App() {
       <Route path="/Home" element={<Articles/>} />
       <Route path='/Articles/ArticleIdSelector' element={<ArticleIdSelector/>} />
       <Route path="/Articles/ArticleIdSelector/:final_id" element={<ArticleById/>} />
+      <Route path="/Articles/:final_id" element={<ArticleById/>} />
     </Routes>
   </div>
   )

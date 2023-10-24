@@ -5,7 +5,7 @@ export const CommentCards = ({allComments}) =>{
             const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}
             return (<div className="each-comment" key={comment.comment_id}>
             <div id="margin-div">
-            <li><b>Comment Id: </b>{comment.article_id}</li>
+            <li><b>Comment Id: </b>{comment.comment_id}</li>
             <li><b>Author: </b>{comment.author}</li>
             <li><b>Body: </b> {comment.body} </li>
             <li><b>Article Id:</b> {comment.article_id}</li>
