@@ -17,4 +17,9 @@ export const getSpecifcArticle=(myId)=>{
         return err
     })
 }
-getSpecifcArticle(2)
+export const getCommentsOnArticle=(myId)=>{
+    return NcApi.get(`/articles/${myId}/comments`).then((res) =>{
+        return res.data.myComments
+    })
+}
+getCommentsOnArticle(3)

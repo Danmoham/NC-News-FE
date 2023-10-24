@@ -6,9 +6,11 @@ export const ArticleById = () =>{
     let {final_id} = useParams()
     const [onlyArticle,setOnlyArticle] = useState({})
     const [isLoading,setIsLoading] = useState(true)
+    const [Id,setId] = useState(0)
     useEffect(() =>{
         getSpecifcArticle(final_id).then((displayArticles) =>{
             setIsLoading(false)
+            setId(final_id)
             setOnlyArticle(displayArticles)
         })
         
@@ -18,7 +20,7 @@ export const ArticleById = () =>{
           {!isLoading ? (
             <div>
             <h2>Please see Specific Article below:</h2>
-            <main> {<SpecificArticleCard onlyArticle = {onlyArticle}/>} </main>
+            <main> {<SpecificArticleCard Id = {Id}onlyArticle = {onlyArticle}/>} </main>
             </div>
           ) : (
             <h2>Loading....</h2>

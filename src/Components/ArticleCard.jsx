@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 export const ArticleCards = ({allArticles}) =>{
     return (<ul>
         { allArticles.map((article) =>{
@@ -11,6 +12,7 @@ export const ArticleCards = ({allArticles}) =>{
             <img src={article.article_img_url} alt="image of the item article"/>
             <li><b>Votes: </b>{article.votes}</li>
             <li><b>Comment Count:</b> {article.comment_count}</li>
+            <Link to={`/articles/ArticleIdSelector/${article.article_id}`}><li>Click here to view all the comments on the article</li></Link>
             </div>)
         })} 
     </ul>)

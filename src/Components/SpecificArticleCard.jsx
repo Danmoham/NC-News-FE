@@ -1,8 +1,6 @@
-export const SpecificArticleCard = ({onlyArticle, isCorrect}) =>{
-    
-    if (onlyArticle === undefined){
-
-    }
+import { CommentsMapped } from "./CommentsMapped"
+import { useState,useEffect } from "react"
+export const SpecificArticleCard = ({onlyArticle, Id}) =>{
     const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}
     const myObject = onlyArticle
          return ( <div>{onlyArticle.article_id ? (<div className="each-article" key={myObject.article_id}>
@@ -14,10 +12,12 @@ export const SpecificArticleCard = ({onlyArticle, isCorrect}) =>{
             <img src={myObject.article_img_url} alt="image of the item article"/>
             <li><b>Votes: </b>{myObject.votes}</li>
             <li><b>Comment Count:</b> {myObject.comment_count}</li>
+                <CommentsMapped Id={Id} />
             </div>) : (
                 <div>
-                    <h3>Incorrect Id Given!</h3>
+                    <h3>Invalid Article ID</h3>
                 </div>
+                
             )}
             </div>)
 
