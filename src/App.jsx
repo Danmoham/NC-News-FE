@@ -9,6 +9,7 @@ import { ArticleById } from './Components/ArticleById'
 function App() {
   return (<div>
     <Header/>
+    <p id="loggedState" >You are Logged in as : Grumpy19</p>
     < NavBar/>
     <Routes>
       <Route path="/" element={<Articles/>}/>

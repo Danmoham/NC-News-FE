@@ -4,7 +4,7 @@ export const ArticleCards = ({allArticles}) =>{
         { allArticles.map((article) =>{
             const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}
             return (<div className="each-article" key={article.article_id}>
-            <h3>{article.title} </h3>
+           <h3><Link id = "myTitle"to={`/articles/ArticleIdSelector/${article.article_id}`}>{article.title}</Link> </h3>
             <li><b>Article Id: </b>{article.article_id}</li>
             <li><b>Author: </b>{article.author}</li>
             <li><b>Topic:</b> {article.topic}</li>

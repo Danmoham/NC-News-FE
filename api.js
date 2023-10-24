@@ -11,7 +11,6 @@ export const getAllArticles = () =>{
 }
 export const getSpecifcArticle=(myId)=>{
     return NcApi.get(`/articles/${myId}`).then((res) =>{
-        console.log(res.data.myArticle)
         return res.data.myArticle
     }).catch((err) =>{
         return err
@@ -24,7 +23,18 @@ export const getCommentsOnArticle=(myId)=>{
 }
 export const patchVotesOnArticle=(id,num)=>{
     return NcApi.patch(`/articles/${id}`, {inc_votes : num}).then((response) =>{
+        return response.data
+    }).catch((err) =>{
+        return err.response.status
+    })
+}
+export const postComments = (id,input) =>{
+    return NcApi.post(`/articles/${id}/comments`,{username : "grumpy19", body : input}).then((response) =>{
         return response
+    }).catch((err) =>{
+        return err.response
     })
 }
 
+
+//postComments(1,"this is my comment")

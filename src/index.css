@@ -144,3 +144,15 @@ input{
     background-color: #c60b0b;
     font-weight: 800;
 }
+
+#myTitle{
+    text-decoration: none;
+}
+#commentBox{
+    text-align: left;
+    height: 30px;
+    width: 30%;
+}
+#loggedState{
+    font-size: 12px;
+}
