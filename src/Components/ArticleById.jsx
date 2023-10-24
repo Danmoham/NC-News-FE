@@ -4,6 +4,8 @@ import { useState,useEffect } from 'react';
 import { SpecificArticleCard } from './SpecificArticleCard';
 export const ArticleById = () =>{
     let {final_id} = useParams()
+    const [commentUpdates,setCommentUpdates] = useState(false)
+
     const [onlyArticle,setOnlyArticle] = useState({})
     const [isLoading,setIsLoading] = useState(true)
     const [id,setId] = useState(0)
@@ -14,13 +16,13 @@ export const ArticleById = () =>{
             setOnlyArticle(displayArticles)
         })
         
-    },[])
+    },[commentUpdates])
     return (
         <div>
           {!isLoading ? (
             <div>
             <h2>Please see Specific Article below:</h2>
-            <main> {<SpecificArticleCard id = {id}onlyArticle = {onlyArticle}/>} </main>
+            <main> {<SpecificArticleCard setCommentUpdates={setCommentUpdates} commentUpdates={commentUpdates}id = {id}onlyArticle = {onlyArticle}/>} </main>
             </div>
           ) : (
             <h2>Loading....</h2>

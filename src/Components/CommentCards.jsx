@@ -1,5 +1,9 @@
+import { useEffect } from "react"
+export const CommentCards = ({commentUpdates,allComments}) =>{
 
-export const CommentCards = ({allComments}) =>{
+    useEffect(() =>{
+
+    },[commentUpdates])
     return (<ul>
         { allComments.map((comment) =>{
             const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}
