@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { getSpecifcArticle } from '../../api';
 import { useState,useEffect } from 'react';
 import { SpecificArticleCard } from './SpecificArticleCard';
-export const ArticleById = () =>{
+export const ArticleById = ({login}) =>{
     let {final_id} = useParams()
     const [commentUpdates,setCommentUpdates] = useState(false)
 
@@ -22,7 +22,7 @@ export const ArticleById = () =>{
           {!isLoading ? (
             <div>
             <h2>Please see Specific Article below:</h2>
-            <main> {<SpecificArticleCard setCommentUpdates={setCommentUpdates} commentUpdates={commentUpdates}id = {id}onlyArticle = {onlyArticle}/>} </main>
+            <main> {<SpecificArticleCard login={login} setCommentUpdates={setCommentUpdates} commentUpdates={commentUpdates}id = {id}onlyArticle = {onlyArticle}/>} </main>
             </div>
           ) : (
             <h2>Loading....</h2>

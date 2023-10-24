@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react"
 import { postComments } from "../../api"
-export const CommentPoster = ({loadingNewComment,setLoadingNewComment, id,setCommentUpdates}) =>{
+export const CommentPoster = ({login,loadingNewComment,setLoadingNewComment, id,setCommentUpdates}) =>{
      const [currentInput, setCurrentInput] =useState("")
      const [finalInput,setFinalInput] =useState("")
      const [errorMessage,setErrorMessage] = useState("")
@@ -8,7 +8,10 @@ export const CommentPoster = ({loadingNewComment,setLoadingNewComment, id,setCom
      const [proceed,setProceed] = useState(false)
      const SubmitFunction = (event) =>{
           event.preventDefault()
-          if(!(currentInput.split(" ").join("").length === 0)){
+          setErrorMessage("")
+          if(!login){
+               setErrorMessage("You are not Logged in, please log in to post a comment")
+          }else if(!(currentInput.split(" ").join("").length === 0)){
                setProceed(true)
                setFinalInput(currentInput)
                setCurrentInput("")

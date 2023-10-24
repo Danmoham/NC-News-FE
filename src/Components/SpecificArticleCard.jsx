@@ -2,7 +2,7 @@ import { CommentsMapped } from "./CommentsMapped"
 import { useState,useEffect } from "react"
 import { patchVotesOnArticle } from "../../api"
 import { CommentPoster } from "./CommentPoster"
-export const SpecificArticleCard = ({setCommentUpdates, commentUpdates, onlyArticle, id}) =>{
+export const SpecificArticleCard = ({login,setCommentUpdates, commentUpdates, onlyArticle, id}) =>{
     const [loadingNewComment, setLoadingNewComment] = useState(false) 
     const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}
     const [currentVote,setCurrentVote] = useState(0)
@@ -49,7 +49,7 @@ export const SpecificArticleCard = ({setCommentUpdates, commentUpdates, onlyArti
             }}>Dislike</button>
             <p id="selectorError">{errorMessage}</p>
             <li><b>Comment Count:</b> {myObject.comment_count}</li>
-                <CommentPoster setLoadingNewComment={setLoadingNewComment} loadingNewComment={loadingNewComment} setCommentUpdates ={setCommentUpdates} commentUpdates={commentUpdates} id={id}/>
+                <CommentPoster login={login} setLoadingNewComment={setLoadingNewComment} loadingNewComment={loadingNewComment} setCommentUpdates ={setCommentUpdates} commentUpdates={commentUpdates} id={id}/>
                 <CommentsMapped setCommentUpdates= {setCommentUpdates} setLoadingNewComment={setLoadingNewComment} loadingNewComment={loadingNewComment} commentUpdates={commentUpdates} id={id} />
                 
             </div>) : (

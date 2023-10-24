@@ -36,5 +36,8 @@ export const postComments = (id,input) =>{
     })
 }
 
-
-//postComments(1,"this is my comment")
+export const getAllTopics = () =>{
+    return NcApi.get(`/topics`).then((data) =>{
+       return data.data.myTopics
+    })
+}

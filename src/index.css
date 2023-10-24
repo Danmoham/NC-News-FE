@@ -156,3 +156,15 @@ input{
 #loggedState{
     font-size: 12px;
 }
+.navBut{
+    background-color: #990033;
+    color: white;
+    font-weight: 700;
+}
+.topicCard{
+    background-color: #990033;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    margin: 40px;
+}
