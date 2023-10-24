@@ -1,11 +1,11 @@
 import { getCommentsOnArticle } from "../../api"
 import { useEffect,useState } from "react"
 import { CommentCards } from "./CommentCards"
-export const CommentsMapped = ({Id}) =>{
+export const CommentsMapped = ({id}) =>{
     const [allComments,setAllComments] = useState([])
     const [isLoading,setIsLoading] = useState(true)
     useEffect(() =>{
-        getCommentsOnArticle(Id).then((comments) =>{
+        getCommentsOnArticle(id).then((comments) =>{
             setIsLoading(false)
             setAllComments(comments)
         })
