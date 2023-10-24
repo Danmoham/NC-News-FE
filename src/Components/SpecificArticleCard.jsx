@@ -12,9 +12,9 @@ export const SpecificArticleCard = ({ onlyArticle, id}) =>{
             return currentVote + value;
         })
     }else if ((currentVote + value) > 1){
-        setErrorMessage("You have already liked this post")
+        setErrorMessage("You have already liked this post!")
     }else{
-        setErrorMessage("You have already disliked this post")
+        setErrorMessage("You have already disliked this post!")
     }
     }
 
