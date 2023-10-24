@@ -11,9 +11,9 @@ export const getAllArticles = () =>{
 }
 export const getSpecifcArticle=(myId)=>{
     return NcApi.get(`/articles/${myId}`).then((res) =>{
+        console.log(res.data.myArticle)
         return res.data.myArticle
     }).catch((err) =>{
-        console.log(typeof(err.response.status))
         return err
     })
 }
@@ -22,4 +22,9 @@ export const getCommentsOnArticle=(myId)=>{
         return res.data.myComments
     })
 }
-getCommentsOnArticle(3)
+export const patchVotesOnArticle=(id,num)=>{
+    return NcApi.patch(`/articles/${id}`, {inc_votes : num}).then((response) =>{
+        return response
+    })
+}
+
