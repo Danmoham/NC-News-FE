@@ -51,3 +51,11 @@ export const getSpecificTopicArticles = (topic_name) =>{
     })
 }
 //getSpecificTopicArticles("bbb")
+
+export const getAllTopicsOrdered =(sortBy,order) =>{
+    if (sortBy && order){
+    return NcApi.get(`/articles?sort_by=${sortBy}&&order=${order}`)
+}else if (sortBy){
+    return NcApi.get(`/articles?sort_by=${sortBy}&&order=desc`)
+}
+}
