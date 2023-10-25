@@ -5,8 +5,8 @@ import { Route,Routes } from 'react-router-dom'
 import { ArticleIdSelector } from './Components/ArticleIdSelector'
 import { NavBar } from './Components/NavBar'
 import { ArticleById } from './Components/ArticleById'
-import { Topics } from './Components/Topics'
 import { LoggedIn } from './Components/LoggedIn'
+import { SpecificTopic } from './Components/SpecificTopic'
 function App() {
   const [login,setLogin] = useState(false)
   return (<div>
@@ -20,7 +20,8 @@ function App() {
       <Route path='/Articles/ArticleIdSelector' element={<ArticleIdSelector/>} />
       <Route path="/Articles/ArticleIdSelector/:final_id" element={<ArticleById login={login}/>} />
       <Route path="/Articles/:final_id" element={<ArticleById  login={login}/>} />
-      <Route path="/Articles/Topics" element={<Topics/>} />
+      <Route path="/topics/:topic_name" element={<SpecificTopic/>}/> 
+      <Route path="Topics/all topics" element={<Articles/>}/>
     </Routes>
   </div>
   )

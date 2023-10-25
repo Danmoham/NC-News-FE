@@ -41,3 +41,13 @@ export const getAllTopics = () =>{
        return data.data.myTopics
     })
 }
+
+export const getSpecificTopicArticles = (topic_name) =>{
+    return NcApi.get(`/articles?topic=${topic_name}`).then((res) =>{
+        return res.data.articles
+    })
+    .catch((res) =>{
+        return res
+    })
+}
+//getSpecificTopicArticles("bbb")
