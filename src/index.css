@@ -156,3 +156,31 @@ input{
 #loggedState{
     font-size: 12px;
 }
+.navBut{
+    background-color: #990033;
+    color: white;
+    font-weight: 700;
+}
+.topicCard{
+    background-color: #990033;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    margin: 40px;
+}
+option{
+   background-color: #990033;
+   font-weight: 800;
+   border-radius: 10px;
+   color: white;
+   margin-top: 10px;
+}
+select{
+    background-color: #990033;
+    font-weight: 700;
+    color: white;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+}

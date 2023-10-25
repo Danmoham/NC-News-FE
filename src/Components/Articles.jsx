@@ -8,7 +8,7 @@ export const Articles = () =>{
         getAllArticles().then((displayArticles) =>{
             setIsLoading(false)
             setAllArticles(displayArticles)
-        })
+        }) 
         
     },[])
       return (
