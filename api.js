@@ -57,17 +57,14 @@ export const getAllArticlesOrdered =(sorted,order) =>{
         false: "asc",
         true : "desc"
     }
-    if (order){
-    return NcApi.get(`/articles?sort_by=${sorted}&&order=${myOrderedObject[order]}`).then((res) =>{
+
+    return NcApi.get(`/articles`,{params : { sort_by : sorted, order : myOrderedObject[order]}}).then((res) =>{
         return res.data.articles
     }).catch((err) =>{
         console.log(err)
+        return err
     })
-}else if (!order){
-    return NcApi.get(`/articles?sort_by=${sorted}&&order=${myOrderedObject[order]}`).then((res) =>{
-        return res.data.articles
-    })
-}
+
 }
 
 export const deleteComment = (id) =>{

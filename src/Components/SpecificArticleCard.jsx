@@ -2,6 +2,7 @@ import { CommentsMapped } from "./CommentsMapped"
 import { useState,useEffect } from "react"
 import { patchVotesOnArticle } from "../../api"
 import { CommentPoster } from "./CommentPoster"
+import { Link } from "react-router-dom"
 export const SpecificArticleCard = ({isSuccess,setIsSuccess, user,login,setCommentUpdates, commentUpdates, onlyArticle, id}) =>{
     const [loadingNewComment, setLoadingNewComment] = useState(false) 
     const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}
@@ -54,7 +55,10 @@ export const SpecificArticleCard = ({isSuccess,setIsSuccess, user,login,setComme
                 
             </div>) : (
                 <div>
-                    <h3>Invalid Article ID</h3>
+                    <h3>Oops.... You typed in the wrong id!</h3>
+                    <div className="wrongElement">
+                    <Link to="/articles"><button>click Here to go home</button></Link>
+                    </div>
                 </div>
                 
             )}

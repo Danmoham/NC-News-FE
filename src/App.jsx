@@ -9,6 +9,7 @@ import { LoggedIn } from './Components/LoggedIn'
 import { SpecificTopic } from './Components/SpecificTopic'
 import { SortBy } from './Components/SortBy'
 import { SpecificComment } from './Components/SpecificComment'
+import { ErrorPage } from './ErrorPage'
 function App() {
   const [login,setLogin] = useState(false)
   const [topic,setTopic] = useState("")
@@ -26,6 +27,7 @@ function App() {
       <Route path="/Articles/:final_id" element={<ArticleById setLogin={setLogin} user={user}login={login}/>} />
       <Route path="/topics/:topic_name" element={<SpecificTopic topic={topic} setTopic={setTopic}/>}/> 
       <Route path="Topics/all topics" element={<Articles/>}/>
+      <Route path="/*" element={<ErrorPage/>} />
     </Routes>
   </div>
   )
