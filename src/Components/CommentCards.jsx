@@ -9,7 +9,6 @@ export const CommentCards = ({user,login, setErrorMessage,commentUpdates,allComm
     const [loading,setLoading] = useState(true)
     const [deleteError,setDeleteError] = useState("")
     useEffect(() =>{
-        console.log("here")
         if (confirmed){
         deleteComment(commentObject.comment_id).then((res) =>{
             if (res === 204){
@@ -74,15 +73,15 @@ if (!isDeletePressed){
     <li><b>Date when the Comment was created :</b> {dateFormatter(commentObject.created_at)}</li>
     <li><b>Votes: </b>{commentObject.votes}</li>
     <p>{deleteError}</p>
-    <button onClick={() =>{
+    <button id="confirmDelete"className="deleteCommentButton" onClick={() =>{
         if(login){
         setConfirmed(!confirmed)
         }else{
             console.log(deleteError)
             setDeleteError("you are not logged in, please login and try again")
         }
-    }}>Proceed</button>
-    <button onClick={() =>{
+    }}>Delete</button>
+    <button className="deleteCommentButton" onClick={() =>{
         setIsDeletePressed(false)
     }}>Go Back</button>
     </div>

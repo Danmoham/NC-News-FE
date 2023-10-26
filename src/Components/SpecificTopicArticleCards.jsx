@@ -21,8 +21,10 @@ export const SpecificTopicArticleCards = ({finalTopicArticles}) =>{
         })
 }</ul>) : (
     <div>
-    <h2>Your topic is invalid.</h2>
+    <h3>Oops... this is not a topic!</h3>
+    <div className="wrongElement">
     <Link to="/articles"><button>Press here to go home</button></Link>
+    </div>
     </div>
     )}
     </div>) 

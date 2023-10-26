@@ -85,7 +85,7 @@ button{
   cursor: pointer;
   display: inline-block;
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 20px;
   list-style: none;
@@ -180,7 +180,7 @@ select{
     font-weight: 700;
     color: white;
     border-radius: 10px;
-    font-size: 14px;
+    font-size: 17px;
     font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: center;
     padding-right: 10px;
@@ -195,7 +195,7 @@ select{
 }
 .sortButtons{
     display: inline;
-    margin-right: 30px;
+    margin-right: 10px;
     font-weight: 700
     
 ;}
@@ -238,4 +238,42 @@ select{
 }
 #LoginArticle{
     text-align: center;
+}
+.wrongElement{
+    text-align: center;
+}
+.deleteCommentButton{
+    display: inline;
+    margin-right: 20px;
+    font-weight: 700;
+    color: rgb(11, 11, 11);
+    background-color: #e5e0e0;
+  
+}
+#confirmDelete{
+    background-color: #c60b0b;
+    color: white;
+}
+#errorPage{
+    text-align: center;
+    margin: 30px;
+}
+#errorImage{
+    border-radius: 25px;
+}
+#invalidUrlButton{
+    background-color: #990033;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+
+}
+label{
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.loginDiv{
+    margin-bottom: 40px;
+    margin-right: 20px;
 }
