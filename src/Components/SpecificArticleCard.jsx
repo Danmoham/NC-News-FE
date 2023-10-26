@@ -2,7 +2,7 @@ import { CommentsMapped } from "./CommentsMapped"
 import { useState,useEffect } from "react"
 import { patchVotesOnArticle } from "../../api"
 import { CommentPoster } from "./CommentPoster"
-export const SpecificArticleCard = ({login,setCommentUpdates, commentUpdates, onlyArticle, id}) =>{
+export const SpecificArticleCard = ({isSuccess,setIsSuccess, user,login,setCommentUpdates, commentUpdates, onlyArticle, id}) =>{
     const [loadingNewComment, setLoadingNewComment] = useState(false) 
     const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}
     const [currentVote,setCurrentVote] = useState(0)
@@ -31,7 +31,7 @@ export const SpecificArticleCard = ({login,setCommentUpdates, commentUpdates, on
             }
     })
 
-}},[currentVote,commentUpdates])
+}},[currentVote,commentUpdates,isSuccess])
     const myObject = onlyArticle
          return ( <div>{onlyArticle.article_id ? (<div className="each-article" key={myObject.article_id}>
             <h3> {myObject.title} </h3>
@@ -49,8 +49,8 @@ export const SpecificArticleCard = ({login,setCommentUpdates, commentUpdates, on
             }}>Dislike</button>
             <p id="selectorError">{errorMessage}</p>
             <li><b>Comment Count:</b> {myObject.comment_count}</li>
-                <CommentPoster login={login} setLoadingNewComment={setLoadingNewComment} loadingNewComment={loadingNewComment} setCommentUpdates ={setCommentUpdates} commentUpdates={commentUpdates} id={id}/>
-                <CommentsMapped setCommentUpdates= {setCommentUpdates} setLoadingNewComment={setLoadingNewComment} loadingNewComment={loadingNewComment} commentUpdates={commentUpdates} id={id} />
+                <CommentPoster isSuccess={isSuccess} login={login} setLoadingNewComment={setLoadingNewComment} loadingNewComment={loadingNewComment} setCommentUpdates ={setCommentUpdates} commentUpdates={commentUpdates} id={id}/>
+                <CommentsMapped setErrorMessage={setErrorMessage}isSuccess={isSuccess} setIsSuccess={setIsSuccess} user={user} login={login}setCommentUpdates= {setCommentUpdates} setLoadingNewComment={setLoadingNewComment} loadingNewComment={loadingNewComment} commentUpdates={commentUpdates} id={id} />
                 
             </div>) : (
                 <div>

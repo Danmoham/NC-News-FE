@@ -1,11 +1,31 @@
-import { useEffect } from "react"
-export const CommentCards = ({commentUpdates,allComments}) =>{
-
+import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { deleteComment } from "../../api"
+export const CommentCards = ({user,login, setErrorMessage,commentUpdates,allComments,isSuccess,setIsSuccess}) =>{
+    const [isDeletePressed,setIsDeletePressed] = useState(false)
+    const [commentObject,setCommentObject] = useState({})
+    const [confirmed,setConfirmed] = useState(false)
+    const [currentSuccess,setCurrentSuccess] = useState(false)
+    const [loading,setLoading] = useState(true)
+    const [deleteError,setDeleteError] = useState("")
     useEffect(() =>{
-
-    },[commentUpdates])
-    return (<ul>
+        console.log("here")
+        if (confirmed){
+        deleteComment(commentObject.comment_id).then((res) =>{
+            if (res === 204){
+                setCurrentSuccess(true)
+                setLoading(false)
+            }else{
+                setCurrentSuccess(false)
+                setLoading(false)
+            }
+        })
+        }
+},[commentUpdates,isDeletePressed,commentObject,confirmed,deleteError,login])
+if (!isDeletePressed){
+    return  (<ul>
         { allComments.map((comment) =>{
+            if (comment.author === user){
             const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}
             return (<div className="each-comment" key={comment.comment_id}>
             <div id="margin-div">
@@ -15,8 +35,88 @@ export const CommentCards = ({commentUpdates,allComments}) =>{
             <li><b>Article Id:</b> {comment.article_id}</li>
             <li><b>Date when the Comment was created :</b> {dateFormatter(comment.created_at)}</li>
             <li><b>Votes: </b>{comment.votes}</li>
+            <button onClick={(event) =>{
+                event.preventDefault()
+                setIsDeletePressed(true)
+                setCommentObject((currentObj) =>{
+                    return comment
+                })
+            }} id="deleteComment">delete your comment Here</button>
             </div>
             </div>)
-        })} 
-    </ul>)
+            }else{
+                <h1>The comment you selected to delete is:</h1>
+                const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}
+                return (<div className="each-comment" key={comment.comment_id}>
+                <div id="margin-div">
+                <li><b>Comment Id: </b>{comment.comment_id}</li>
+                <li><b>Author: </b>{comment.author}</li>
+                <li><b>Body: </b> {comment.body} </li>
+                <li><b>Article Id:</b> {comment.article_id}</li>
+                <li><b>Date when the Comment was created :</b> {dateFormatter(comment.created_at)}</li>
+                <li><b>Votes: </b>{comment.votes}</li>
+                </div>
+                </div>)
+        }
+    }) 
+}
+   </ul>) 
+}else{
+    if (!confirmed){
+    const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}
+    return (<div className="each-comment" key={commentObject.comment_id}>
+    <div id="margin-div">
+    <h3>The comment you selected to delete is:</h3>
+    <li><b>Comment Id: </b>{commentObject.comment_id}</li>
+    <li><b>Author: </b>{commentObject.author}</li>
+    <li><b>Body: </b> {commentObject.body} </li>
+    <li><b>Article Id:</b> {commentObject.article_id}</li>
+    <li><b>Date when the Comment was created :</b> {dateFormatter(commentObject.created_at)}</li>
+    <li><b>Votes: </b>{commentObject.votes}</li>
+    <p>{deleteError}</p>
+    <button onClick={() =>{
+        if(login){
+        setConfirmed(!confirmed)
+        }else{
+            console.log(deleteError)
+            setDeleteError("you are not logged in, please login and try again")
+        }
+    }}>Proceed</button>
+    <button onClick={() =>{
+        setIsDeletePressed(false)
+    }}>Go Back</button>
+    </div>
+    </div>)
+    }else if (confirmed){
+        if (loading){
+            return (<h3>Loading...</h3>)
+        }else{
+            if(currentSuccess){
+                return (<div>
+                    <h2>Succesfully Deleted</h2>
+                    <button onClick={(event) =>{
+                        event.preventDefault()
+                        setIsDeletePressed(false)
+                        setIsSuccess(currentSuccess)
+                        setConfirmed(false)
+                        setCurrentSuccess(false)
+                        setCommentObject({})
+                    }}>Click here to go back</button>
+                     </div>)
+
+            }else{
+                return (<div><h2>This has not been deleted Succesfully, try again later</h2>
+                        <button onClick={(event) =>{
+                        event.preventDefault()
+                        setCommentObject({})
+                        setIsDeletePressed(false)
+                        setConfirmed(false)
+                        setIsSuccess(currentSuccess)
+                        setCurrentSuccess(false)
+                        setErrorMessage("Comment Not deleted Succesfully")
+                    }}>Click here to go back to the article</button>                
+                    </div>) }
+        }
+    }
+}
 }

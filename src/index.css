@@ -231,3 +231,11 @@ select{
     color: white;
     font-weight: 700;
 }
+#deleteComment{
+    background-color: #990033;
+    color: white;
+    font-weight: 700;
+}
+#LoginArticle{
+    text-align: center;
+}
