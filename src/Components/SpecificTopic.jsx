@@ -19,7 +19,6 @@ export const SpecificTopic = ({setTopic,topic}) =>{
         <div>
             {!isLoading ? (
                 <div>
-                    <h2>Please see articles for {topic_name}</h2>
                     <main>{<SpecificTopicArticleCards finalTopicArticles={finalTopicArticles}/>}</main>
                     </div>
             ): (
