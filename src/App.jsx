@@ -16,8 +16,7 @@ function App() {
   const [user,setUser] = useState("grumpy19")
   return (<div>
     <Header/>
-    <LoggedIn  login={login} setLogin={setLogin}/>
-    < NavBar topic={topic} setTopic={setTopic}/>
+    < NavBar login={login} setLogin={setLogin} topic={topic} setTopic={setTopic}/>
     <Routes>
       <Route path="/" element={<Articles/>}/>
       <Route path='/articles' element={<Articles/>}/>

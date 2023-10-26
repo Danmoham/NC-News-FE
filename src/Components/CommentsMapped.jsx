@@ -12,7 +12,7 @@ export const CommentsMapped = ({setErrorMessage,isSuccess,setIsSuccess,user,logi
         })
         setIsLoading(true)
         
-    },[commentUpdates,loadingNewComment,isSuccess])
+    },[commentUpdates,loadingNewComment,isSuccess,deleteMessage])
       return (
         <div>
           {!isLoading ? (

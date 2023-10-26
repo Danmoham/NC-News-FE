@@ -19,8 +19,9 @@ export const Articles = () =>{
       return (
         <div>
           {!isLoading ? (
-            <div>
-            <h2>Please see all articles below</h2>
+            <div><div id="articleDiv">
+            <h1>Please see all articles below</h1>
+            </div>
             {<SortBy  sorting={sorting} setSorting={setSorting} ordered={ordered} setOrdered={setOrdered}/>}
             <main> {<ArticleCards allArticles = {allArticles}/>} </main>
             </div>
