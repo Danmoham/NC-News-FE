@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react"
 import { postComments } from "../../api"
-export const CommentPoster = ({login,loadingNewComment,setLoadingNewComment, id,setCommentUpdates}) =>{
+export const CommentPoster = ({isSuccess,login,loadingNewComment,setLoadingNewComment, id,setCommentUpdates}) =>{
      const [currentInput, setCurrentInput] =useState("")
      const [finalInput,setFinalInput] =useState("")
      const [errorMessage,setErrorMessage] = useState("")
@@ -34,7 +34,7 @@ export const CommentPoster = ({login,loadingNewComment,setLoadingNewComment, id,
           
           }})
           }
-     },[finalInput])
+     },[isSuccess,finalInput])
 
 return (<div> {!loadingNewComment ? (<form onSubmit={SubmitFunction}>
     <label>Add comment:</label> 

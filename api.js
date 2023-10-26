@@ -53,14 +53,12 @@ export const getSpecificTopicArticles = (topic_name) =>{
 //getSpecificTopicArticles("bbb")
 
 export const getAllArticlesOrdered =(sorted,order) =>{
-    console.log(sorted)
     const myOrderedObject = {
         false: "asc",
         true : "desc"
     }
     if (order){
     return NcApi.get(`/articles?sort_by=${sorted}&&order=${myOrderedObject[order]}`).then((res) =>{
-        console.log(res.data.articles)
         return res.data.articles
     }).catch((err) =>{
         console.log(err)
@@ -70,4 +68,12 @@ export const getAllArticlesOrdered =(sorted,order) =>{
         return res.data.articles
     })
 }
+}
+
+export const deleteComment = (id) =>{
+    return NcApi.delete(`/comments/${id}`).then((res) =>{
+    return res.status
+    }).catch((err) =>{
+        return (err.response.status)
+    })
 }
