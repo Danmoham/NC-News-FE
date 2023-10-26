@@ -190,6 +190,44 @@ select{
 }
 
 #sortDiv{
-    padding-bottom: 70px;
     padding-top: 10px;
+    text-align: center;
+}
+.sortButtons{
+    display: inline;
+    margin-right: 30px;
+    font-weight: 700
+    
+;}
+
+#votesvotes{
+    background-color: #03b857;
+    color: white;
+    font-weight: 700;
+}
+#created_atcreated_at{
+    background-color: #03b857;
+    color: white;
+    font-weight: 700;
+}
+#comment_countcomment_count{
+    background-color: #03b857;
+    color: white;
+    font-weight: 700;
+}
+#orderDiv{
+    padding-bottom: 30px;
+    padding-top: 50px;
+    text-align: center;
+}
+#buttonascending{
+    background-color: #03b857;
+    color: white;
+    font-weight: 700;
+}
+
+#buttondescending{
+    background-color: #990033;
+    color: white;
+    font-weight: 700;
 }
