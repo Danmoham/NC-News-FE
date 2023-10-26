@@ -45,8 +45,7 @@ nav{
     text-align: center;
 }
 a{
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 10px;
 }
 #formDiv{
     text-align: center;
@@ -174,6 +173,7 @@ option{
    border-radius: 10px;
    color: white;
    margin-top: 10px;
+   padding-right: 10px;
 }
 select{
     background-color: #990033;
@@ -183,4 +183,51 @@ select{
     font-size: 14px;
     font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: center;
+    padding-right: 10px;
+}
+#midNav{
+    padding-left: 10px;
+}
+
+#sortDiv{
+    padding-top: 10px;
+    text-align: center;
+}
+.sortButtons{
+    display: inline;
+    margin-right: 30px;
+    font-weight: 700
+    
+;}
+
+#votesvotes{
+    background-color: #03b857;
+    color: white;
+    font-weight: 700;
+}
+#created_atcreated_at{
+    background-color: #03b857;
+    color: white;
+    font-weight: 700;
+}
+#comment_countcomment_count{
+    background-color: #03b857;
+    color: white;
+    font-weight: 700;
+}
+#orderDiv{
+    padding-bottom: 30px;
+    padding-top: 50px;
+    text-align: center;
+}
+#buttonascending{
+    background-color: #03b857;
+    color: white;
+    font-weight: 700;
+}
+
+#buttondescending{
+    background-color: #990033;
+    color: white;
+    font-weight: 700;
 }

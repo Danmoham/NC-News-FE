@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom"
 import { getSpecificTopicArticles } from "../../api"
 import { useState,useEffect } from "react"
 import { SpecificTopicArticleCards } from "./SpecificTopicArticleCards"
-export const SpecificTopic = () =>{
+export const SpecificTopic = ({setTopic,topic}) =>{
     let {topic_name} = useParams()
     const [topicArticles,setTopicArticles] = useState([])
     const [finalTopicArticles,setFinalTopicArticles] = useState([])
@@ -14,7 +14,7 @@ export const SpecificTopic = () =>{
                 setFinalTopicArticles(displayArticles)
                 setIsLoading(false)
         })
-    },[isLoading,finalTopicArticles])
+    },[isLoading,topic])
     return (
         <div>
             {!isLoading ? (

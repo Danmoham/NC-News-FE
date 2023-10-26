@@ -7,12 +7,14 @@ import { NavBar } from './Components/NavBar'
 import { ArticleById } from './Components/ArticleById'
 import { LoggedIn } from './Components/LoggedIn'
 import { SpecificTopic } from './Components/SpecificTopic'
+import { SortBy } from './Components/SortBy'
 function App() {
   const [login,setLogin] = useState(false)
+  const [topic,setTopic] = useState("")
   return (<div>
     <Header/>
     <LoggedIn  login={login} setLogin={setLogin}/>
-    < NavBar/>
+    < NavBar topic={topic} setTopic={setTopic}/>
     <Routes>
       <Route path="/" element={<Articles/>}/>
       <Route path='/articles' element={<Articles/>}/>
@@ -20,7 +22,7 @@ function App() {
       <Route path='/Articles/ArticleIdSelector' element={<ArticleIdSelector/>} />
       <Route path="/Articles/ArticleIdSelector/:final_id" element={<ArticleById login={login}/>} />
       <Route path="/Articles/:final_id" element={<ArticleById  login={login}/>} />
-      <Route path="/topics/:topic_name" element={<SpecificTopic/>}/> 
+      <Route path="/topics/:topic_name" element={<SpecificTopic topic={topic} setTopic={setTopic}/>}/> 
       <Route path="Topics/all topics" element={<Articles/>}/>
     </Routes>
   </div>

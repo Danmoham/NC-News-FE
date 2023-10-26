@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 export const ArticleCards = ({allArticles}) =>{
+    let newArticles = [...allArticles]
     return (<ul>
         { allArticles.map((article) =>{
             const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}

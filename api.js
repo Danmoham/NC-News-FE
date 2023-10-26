@@ -37,7 +37,7 @@ export const postComments = (id,input) =>{
 }
 
 export const getAllTopics = () =>{
-    return NcApi.get(`/topics`).then((data) =>{
+    return NcApi.get(`/topics`,).then((data) =>{
        return data.data.myTopics
     })
 }
@@ -51,3 +51,23 @@ export const getSpecificTopicArticles = (topic_name) =>{
     })
 }
 //getSpecificTopicArticles("bbb")
+
+export const getAllArticlesOrdered =(sorted,order) =>{
+    console.log(sorted)
+    const myOrderedObject = {
+        false: "asc",
+        true : "desc"
+    }
+    if (order){
+    return NcApi.get(`/articles?sort_by=${sorted}&&order=${myOrderedObject[order]}`).then((res) =>{
+        console.log(res.data.articles)
+        return res.data.articles
+    }).catch((err) =>{
+        console.log(err)
+    })
+}else if (!order){
+    return NcApi.get(`/articles?sort_by=${sorted}&&order=${myOrderedObject[order]}`).then((res) =>{
+        return res.data.articles
+    })
+}
+}

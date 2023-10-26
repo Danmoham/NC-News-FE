@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { getAllTopics } from '../../api'
 import { useState,useEffect } from 'react'
-export const NavBar = () =>{
+export const NavBar = ({topic,setTopic}) =>{
     const navigate = useNavigate()
     const [myTopics,setMyTopics] = useState([])
     const [getTopic,setGetTopic] = useState("")
@@ -11,6 +11,7 @@ export const NavBar = () =>{
             setMyTopics(res)
         })
         if(getTopic.length > 1){
+            setTopic(myTopics)
             navigate(`/topics/${getTopic}`)
         }
 
@@ -29,7 +30,7 @@ export const NavBar = () =>{
             return <option to="/articles" key={topic.slug} value={topic.slug}>{topic.slug}</option>
         })}
         </select>
-     <Link to="/articles"><button className='navBut'>All Articles</button></Link>   <Link to="/articles/ArticleIdSelector"><button className='navBut'> Search Article By Id</button></Link>
+     <Link id="midNav" to="/articles"><button className='navBut'>All Articles</button></Link>   <Link to="/articles/ArticleIdSelector"><button className='navBut'> Search Article By Id</button></Link>
         </nav>
     </div>
 }
