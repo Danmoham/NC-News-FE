@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react"
 import { postComments } from "../../api"
-export const CommentPoster = ({isSuccess,login,loadingNewComment,setLoadingNewComment, id,setCommentUpdates}) =>{
+export const CommentPoster = ({setIsSuccess,login,loadingNewComment,setLoadingNewComment, id,setCommentUpdates}) =>{
      const [currentInput, setCurrentInput] =useState("")
      const [finalInput,setFinalInput] =useState("")
      const [errorMessage,setErrorMessage] = useState("")
@@ -27,14 +27,17 @@ export const CommentPoster = ({isSuccess,login,loadingNewComment,setLoadingNewCo
                setLoadingNewComment(false)
                setCompleteMessage(`This has now been posted`)
                setCommentUpdates(true)
+               setIsSuccess(true)
+               setErrorMessage("")
           }else{
           setLoadingNewComment(false)
           setErrorMessage(`The posting for this comment has failed. Please try again Later.`)
           setCommentUpdates(true)
+          setIsSuccess(true)
           
           }})
           }
-     },[isSuccess,finalInput])
+     },[finalInput])
 
 return (<div> {!loadingNewComment ? (<form onSubmit={SubmitFunction}>
     <label>Add comment:</label> 

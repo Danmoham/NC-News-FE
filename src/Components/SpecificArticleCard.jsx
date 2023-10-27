@@ -52,7 +52,7 @@ export const SpecificArticleCard = ({isSuccess,setIsSuccess, setOnlyArticle, use
             }}>Dislike</button>
             <p id="selectorError">{errorMessage}</p>
             <li><b>Comment Count:</b> {myObject.comment_count}</li>
-                <CommentPoster isSuccess={isSuccess} login={login} setLoadingNewComment={setLoadingNewComment} loadingNewComment={loadingNewComment} setCommentUpdates ={setCommentUpdates} commentUpdates={commentUpdates} id={id}/>
+                <CommentPoster setIsSuccess={setIsSuccess} isSuccess={isSuccess} login={login} setLoadingNewComment={setLoadingNewComment} loadingNewComment={loadingNewComment} setCommentUpdates ={setCommentUpdates} commentUpdates={commentUpdates} id={id}/>
                 <CommentsMapped setErrorMessage={setErrorMessage}isSuccess={isSuccess} setIsSuccess={setIsSuccess} user={user} login={login}setCommentUpdates= {setCommentUpdates} setLoadingNewComment={setLoadingNewComment} loadingNewComment={loadingNewComment} commentUpdates={commentUpdates} id={id} />
                 
             </div>) : (
