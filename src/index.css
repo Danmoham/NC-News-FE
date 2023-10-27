@@ -178,6 +178,7 @@ input{
     font-weight: 700;
     margin-bottom: 10px;
 }
+
 .topicCard{
     background-color: #4267b2;
     padding: 10px;
@@ -216,9 +217,14 @@ select{
 .sortButtons{
     display: inline;
     margin-right: 10px;
-    font-weight: 700
+    font-weight: 700;
+    margin-bottom: 10px
     
 ;}
+
+#sortLabel{
+    margin-bottom: 1000px;
+}
 
 #votesvotes{
     background-color: #4267b2;
@@ -244,10 +250,12 @@ select{
     background-color: #4267b2;
     color: white;
     font-weight: 700;
+    margin-top: 10px;
 }
 
 #buttondescending{
     background-color: #B24942;
+    margin-top: 10px;
     color: white;
     font-weight: 700;
 }
