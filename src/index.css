@@ -68,7 +68,7 @@ h3{
     padding-right: 20px;
 }
 @media only screen and (max-width: 768px) {
-    .each-comment, html, body, .row {
+    #myTopicBody,.each-comment, html, body, .row {
        margin-left:0px !important;
        margin-right:0px !important;
        padding-left:13px !important;
@@ -299,4 +299,8 @@ img{
 .author{
     font-size: 14px;
     font-weight: 700;
+}
+#myTopicBody{
+    margin-left: 500px;
+    margin-right: 500px;
 }

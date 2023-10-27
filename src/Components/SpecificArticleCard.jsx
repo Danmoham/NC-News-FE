@@ -39,7 +39,9 @@ export const SpecificArticleCard = ({isSuccess,setIsSuccess, setOnlyArticle, use
             <li><b>Author: </b>{myObject.author}</li>
             <li><b>Topic:</b> {myObject.topic}</li>
             <h2> {myObject.title} </h2>
-            <p>{myObject.body}</p>
+            <div id="myTopicBody">
+            <li>{myObject.body}</li>
+            </div>
             <br></br>
             <img src={myObject.article_img_url} alt="image of the item article"/>
             <li><b>Date:</b> {dateFormatter(myObject.created_at)}</li>
