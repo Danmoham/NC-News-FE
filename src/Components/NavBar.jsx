@@ -32,7 +32,9 @@ export const NavBar = ({login,setLogin,topic,setTopic}) =>{
             return <option to="/articles" key={topic.slug} value={topic.slug}>{topic.slug}</option>
         })}
         </select>
-     <Link id="midNav" to="/articles"><button className='navBut'>All Articles</button></Link>   <Link to="/articles/ArticleIdSelector"><button className='navBut'> Search Article By Id</button></Link>
+     <Link id="midNav" to="/articles"><button className='navBut'>All Articles</button></Link>
+     <Link to="/topArticles/"><button className='navBut'>Best Articles</button></Link>
+     <Link to="/articles/ArticleIdSelector"><button className='navBut'> Search Article By Id</button></Link> 
         </nav>
     </div>
 }

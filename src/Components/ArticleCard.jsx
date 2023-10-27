@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom'
 export const ArticleCards = ({allArticles}) =>{
-    let newArticles = [...allArticles]
     return (<ul>
-        { allArticles.map((article) =>{
+        { allArticles.map((article,index) =>{
             const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}
             return (<div className="each-article" key={article.article_id}>
-           <h3><Link id = "myTitle"to={`/articles/ArticleIdSelector/${article.article_id}`}>{article.title}</Link> </h3>
+           <h3><Link id = "myTitle"to={`/articles/ArticleIdSelector/${article.article_id}`}>{`${index+1}. ${article.title}`}</Link> </h3>
             <li><b>Article Id: </b>{article.article_id}</li>
             <li><b>Author: </b>{article.author}</li>
             <li><b>Topic:</b> {article.topic}</li>

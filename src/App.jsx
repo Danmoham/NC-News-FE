@@ -8,8 +8,8 @@ import { ArticleById } from './Components/ArticleById'
 import { LoggedIn } from './Components/LoggedIn'
 import { SpecificTopic } from './Components/SpecificTopic'
 import { SortBy } from './Components/SortBy'
-import { SpecificComment } from './Components/SpecificComment'
 import { ErrorPage } from './ErrorPage'
+import { TopArticles } from './Components/TopArticles'
 function App() {
   const [login,setLogin] = useState(false)
   const [topic,setTopic] = useState("")
@@ -23,6 +23,7 @@ function App() {
       <Route path="/" element={<Articles/>}/>
       <Route path='/articles' element={<Articles/>}/>
       <Route path="/Home" element={<Articles/>} />
+      <Route path='/TopArticles' element={<TopArticles/>} />
       <Route path='/Articles/ArticleIdSelector' element={<ArticleIdSelector/>} />
       <Route path="/Articles/ArticleIdSelector/:final_id" element={<ArticleById setLogin={setLogin} user={user}login={login}/>} />
       <Route path="/Articles/:final_id" element={<ArticleById setLogin={setLogin} user={user}login={login}/>} />

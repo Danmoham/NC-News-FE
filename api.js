@@ -74,3 +74,16 @@ export const deleteComment = (id) =>{
         return (err.response.status)
     })
 }
+export const getBestArticles = () =>{
+    return NcApi.get(`/articles?sort_by=votes&&order=desc`).then((res) =>{
+        const MyArray = []
+        for (let i = 0; i < 5;i++){
+            MyArray.push(res.data.articles[i])
+        }
+        console.log(MyArray)
+        return MyArray
+    }) 
+    .catch((err) =>{
+        return err.response
+    })  
+}

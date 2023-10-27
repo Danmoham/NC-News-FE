@@ -29,6 +29,7 @@ if (!isDeletePressed){
             return (<div className="each-comment" key={comment.comment_id}>
             <div id="margin-div">
             <li className="date">{dateFormatter(comment.created_at)}</li>
+            <li className="author">{comment.author}</li>
             <li>{comment.body} </li>
             <li><b>Votes: </b>{comment.votes}</li>
             <button onClick={(event) =>{
