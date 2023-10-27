@@ -16,6 +16,7 @@ function App() {
   const [user,setUser] = useState("grumpy19")
   return (<div>
     <Header/>
+    <div id="mainDiv">
     < NavBar login={login} setLogin={setLogin} topic={topic} setTopic={setTopic}/>
     <Routes>
       <Route path="/" element={<Articles/>}/>
@@ -28,6 +29,7 @@ function App() {
       <Route path="Topics/all topics" element={<Articles/>}/>
       <Route path="/*" element={<ErrorPage/>} />
     </Routes>
+  </div>
   </div>
   )
 }
