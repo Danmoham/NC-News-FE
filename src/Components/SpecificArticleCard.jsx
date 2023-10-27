@@ -24,6 +24,7 @@ export const SpecificArticleCard = ({isSuccess,setIsSuccess, setOnlyArticle, use
     }
 
     useEffect(() =>{
+
         if (send){
         patchVotesOnArticle(id,currentVote).then((res)=>{
             if ((res === 404) || (res === 400) || (res === 500)){
@@ -33,7 +34,7 @@ export const SpecificArticleCard = ({isSuccess,setIsSuccess, setOnlyArticle, use
     })
 
 
-}},[currentVote,commentUpdates,isSuccess,errorMessage])
+}},[currentVote,commentUpdates,isSuccess])
     const myObject = onlyArticle
          return ( <div id="specificArticle">{onlyArticle.article_id ? (<div  key={myObject.article_id}>
             <li><b>Author: </b>{myObject.author}</li>
