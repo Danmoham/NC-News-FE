@@ -15,6 +15,6 @@ export const TopArticles = () =>{
         <main>{<ArticleCards allArticles={allArticles}/>}</main>
     </div>
     }else{
-        <h2>Loading....</h2>
+        return <div><h2>Loading....</h2> </div>
     }
 }
