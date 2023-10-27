@@ -24,7 +24,6 @@ export const SpecificArticleCard = ({isSuccess,setIsSuccess, setOnlyArticle, use
     }
 
     useEffect(() =>{
-        setErrorMessage("")
         if (send){
         patchVotesOnArticle(id,currentVote).then((res)=>{
             if ((res === 404) || (res === 400) || (res === 500)){
