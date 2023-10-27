@@ -42,7 +42,7 @@ export const SpecificArticleCard = ({isSuccess,setIsSuccess, setOnlyArticle, use
             <p>{myObject.body}</p>
             <br></br>
             <img src={myObject.article_img_url} alt="image of the item article"/>
-            <li><b>Date when the article was created :</b> {dateFormatter(myObject.created_at)}</li>
+            <li><b>Date:</b> {dateFormatter(myObject.created_at)}</li>
             <li><b>Votes: </b>{myObject.votes + currentVote}</li>
             <button className="voteButtons" id="like" onClick={() =>{
                 updateLikes(1)

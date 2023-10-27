@@ -9,7 +9,7 @@ export const ArticleCards = ({allArticles}) =>{
             <li><b>Article Id: </b>{article.article_id}</li>
             <li><b>Author: </b>{article.author}</li>
             <li><b>Topic:</b> {article.topic}</li>
-            <li><b>Date when the article was created :</b> {dateFormatter(article.created_at)}</li>
+            <li><b>Date:</b> {dateFormatter(article.created_at)}</li>
             <img src={article.article_img_url} alt="image of the item article"/>
             <li><b>Votes: </b>{article.votes}</li>
             <li><b>Comment Count:</b> {article.comment_count}</li>

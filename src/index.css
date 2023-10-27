@@ -62,8 +62,19 @@ h3{
     color: black;
     background-color: #C6C6C6;
     border-radius: 20px;
-    ;
+    margin-left: 400px;
+    margin-right: 400px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
+@media only screen and (max-width: 768px) {
+    .each-comment, html, body, .row {
+       margin-left:0px !important;
+       margin-right:0px !important;
+       padding-left:13px !important;
+       padding-right:13px !important;
+    }
+ }
 li{
     margin-top: 5px;
     margin-bottom: 5px;
@@ -281,4 +292,11 @@ img{
     max-width: 100%;
     height: auto;
 }
-
+.date{
+    font-size: 12px;
+    font-weight: 700;
+}
+.author{
+    font-size: 14px;
+    font-weight: 700;
+}

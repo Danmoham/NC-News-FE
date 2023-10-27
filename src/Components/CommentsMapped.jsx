@@ -18,7 +18,7 @@ export const CommentsMapped = ({setErrorMessage,isSuccess,setIsSuccess,user,logi
       return (
         <div>
           {!isLoading ? (
-            <div>
+            <div id="comments">
             <main> {<CommentCards manualRerender={manualRerender} setManualReRender={setManualReRender} setErrorMessage={setErrorMessage} setIsSuccess={setIsSuccess} isSuccess={isSuccess} id={id}user={user} login={login} setLoadingNewComment={setLoadingNewComment} loadingNewComment={loadingNewComment} commentUpdates={commentUpdates} setAllComments={setAllComments} allComments = {allComments}/>} </main>
             </div>
           ) : (

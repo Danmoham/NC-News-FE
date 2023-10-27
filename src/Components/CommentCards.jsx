@@ -28,9 +28,8 @@ if (!isDeletePressed){
             const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}
             return (<div className="each-comment" key={comment.comment_id}>
             <div id="margin-div">
-            <li><b>Author: </b>{comment.author}</li>
-            <li><b>Body: </b> {comment.body} </li>
-            <li><b>Date when the Comment was created :</b> {dateFormatter(comment.created_at)}</li>
+            <li className="date">{dateFormatter(comment.created_at)}</li>
+            <li>{comment.body} </li>
             <li><b>Votes: </b>{comment.votes}</li>
             <button onClick={(event) =>{
                 event.preventDefault()
@@ -42,13 +41,12 @@ if (!isDeletePressed){
             </div>
             </div>)
             }else{
-                <h1>The comment you selected to delete is:</h1>
                 const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}
                 return (<div className="each-comment" key={comment.comment_id}>
                 <div id="margin-div">
-                <li><b>Author: </b>{comment.author}</li>
+                <li className="date">{dateFormatter(comment.created_at)}</li>
+                <li className="author">{comment.author}</li>
                 <li><b>Body: </b> {comment.body} </li>
-                <li><b>Date when the Comment was created :</b> {dateFormatter(comment.created_at)}</li>
                 <li><b>Votes: </b>{comment.votes}</li>
                 </div>
                 </div>)
@@ -61,10 +59,9 @@ if (!isDeletePressed){
     const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}
     return (<div className="each-comment" key={commentObject.comment_id}>
     <div id="margin-div">
+    <li className="date"><b>Date:</b> {dateFormatter(commentObject.created_at)}</li>
     <h3>The comment you selected to delete is:</h3>
-    <li><b>Author: </b>{commentObject.author}</li>
-    <li><b>Body: </b> {commentObject.body} </li>
-    <li><b>Date when the Comment was created :</b> {dateFormatter(commentObject.created_at)}</li>
+    <li><b></b> {commentObject.body} </li>
     <li><b>Votes: </b>{commentObject.votes}</li>
     <p>{deleteError}</p>
     <button id="confirmDelete"className="deleteCommentButton" onClick={() =>{
