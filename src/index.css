@@ -62,10 +62,18 @@ h3{
     color: black;
     background-color: #C6C6C6;
     border-radius: 20px;
-    margin-left: 400px;
-    margin-right: 400px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+@media only screen and (max-width :768px){
+    .each-comment{
+        margin-left:20px !important;
+        margin-right:2px !important;
+        padding-left:2px !important;
+        padding-right:2px !important;
+    }
 }
 @media only screen and (max-width: 768px) {
     #myTopicBody,.each-comment, html, body, .row {
@@ -159,6 +167,7 @@ input{
     text-align: left;
     height: 30px;
     width: 30%;
+    margin-bottom: 20px;
 }
 #loggedState{
     font-size: 12px;
