@@ -46,7 +46,7 @@ if (!isDeletePressed){
                 <div id="margin-div">
                 <li className="date">{dateFormatter(comment.created_at)}</li>
                 <li className="author">{comment.author}</li>
-                <li><b>Body: </b> {comment.body} </li>
+                <li>{comment.body} </li>
                 <li><b>Votes: </b>{comment.votes}</li>
                 </div>
                 </div>)
