@@ -16,7 +16,7 @@ li{
 
 }
 #header{
-    background-color: #990033;
+    background-color: #4267b2;
     color: white;
     height: 70px;
     margin: 20px;
@@ -143,12 +143,12 @@ input{
 }
 #like{
     color: white;
-    background-color: #03b857;
+    background-color: #4267b2;
     font-weight: 800;
 }
 #dislike{
     color: white;
-    background-color: #c60b0b;
+    background-color: #B24942;
     font-weight: 800;
 }
 
@@ -164,20 +164,20 @@ input{
     font-size: 12px;
 }
 .navBut{
-    background-color: #990033;
+    background-color: #4267b2;
     color: white;
     font-weight: 700;
     margin-bottom: 10px;
 }
 .topicCard{
-    background-color: #990033;
+    background-color: #4267b2;
     padding: 10px;
     color: white;
     border-radius: 10px;
     margin: 40px;
 }
 option{
-   background-color: #990033;
+   background-color: #4267b2;
    font-weight: 800;
    border-radius: 10px;
    color: white;
@@ -185,7 +185,7 @@ option{
    padding-right: 10px;
 }
 select{
-    background-color: #990033;
+    background-color: #4267b2;
     font-weight: 700;
     color: white;
     border-radius: 10px;
@@ -212,17 +212,17 @@ select{
 ;}
 
 #votesvotes{
-    background-color: #03b857;
+    background-color: #4267b2;
     color: white;
     font-weight: 700;
 }
 #created_atcreated_at{
-    background-color: #03b857;
+    background-color: #4267b2;
     color: white;
     font-weight: 700;
 }
 #comment_countcomment_count{
-    background-color: #03b857;
+    background-color: #4267b2;
     color: white;
     font-weight: 700;
 }
@@ -232,18 +232,18 @@ select{
     text-align: center;
 }
 #buttonascending{
-    background-color: #03b857;
+    background-color: #4267b2;
     color: white;
     font-weight: 700;
 }
 
 #buttondescending{
-    background-color: #990033;
+    background-color: #B24942;
     color: white;
     font-weight: 700;
 }
 #deleteComment{
-    background-color: #990033;
+    background-color: #B24942;
     color: white;
     font-weight: 700;
 }
