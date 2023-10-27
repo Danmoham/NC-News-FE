@@ -35,7 +35,7 @@ export const SpecificArticleCard = ({isSuccess,setIsSuccess, setOnlyArticle, use
 
 }},[currentVote,commentUpdates,isSuccess,errorMessage])
     const myObject = onlyArticle
-         return ( <div>{onlyArticle.article_id ? (<div className="each-article" key={myObject.article_id}>
+         return ( <div id="specificArticle">{onlyArticle.article_id ? (<div  key={myObject.article_id}>
             <li><b>Author: </b>{myObject.author}</li>
             <li><b>Topic:</b> {myObject.topic}</li>
             <h2> {myObject.title} </h2>
