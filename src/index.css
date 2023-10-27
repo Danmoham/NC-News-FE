@@ -319,7 +319,4 @@ img{
 
 #specificArticle{
     text-align: center;
-    display: flex;
-    flex-direction: row;
-    margin: 40px;
 }
