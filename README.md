@@ -1,8 +1,9 @@
-# React + Vite
+# Nc News FE Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project has been designed to emulate a real world news website, this has been created using react js and you can view the deployed website here: https://dans-ncnews.netlify.app/. You can also view the github repo here: github.com/Danmoham/NC-News-FE. We used our back end API that we created on the attached link : https://github.com/Danmoham/NC-News, which fetched data from a database that we present to you and manipulate with this front end application. 
 
-Currently, two official plugins are available:
+If you wish to clone this project please follow the below: 
+1. Git clone github.com/Danmoham/NC-News-FE
+2. ensure node v14 is installed, if not npm install node
+3. npm run dev and open up on your local browser. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
