@@ -298,7 +298,6 @@ select{
 }
 label{
     font-weight: 700;
-    font-size: 18px;
     margin-bottom: 20px;
 }
 .loginDiv{
@@ -319,8 +318,8 @@ img{
     font-weight: 700;
 }
 #myTopicBody{
-    margin-left: 500px;
-    margin-right: 500px;
+    margin-left: 27%;
+    margin-right: 27%;
 }
 #cards{
     display: flex;
