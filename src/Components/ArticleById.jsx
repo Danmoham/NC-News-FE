@@ -22,7 +22,7 @@ export const ArticleById = ({setLogin,login,user}) =>{
         <div>
           {!isLoading ? (
             <div>
-            <main> {<SpecificArticleCard isSuccess={isSuccess} setIsSuccess={setIsSuccess}user={user} login={login} setCommentUpdates={setCommentUpdates} commentUpdates={commentUpdates}id = {id}onlyArticle = {onlyArticle}/>} </main>
+            <main> {<SpecificArticleCard setOnlyArticle={setOnlyArticle} isSuccess={isSuccess} setIsSuccess={setIsSuccess}user={user} login={login} setCommentUpdates={setCommentUpdates} commentUpdates={commentUpdates}id = {id}onlyArticle = {onlyArticle}/>} </main>
             </div>
           ) : (
             <h2>Loading....</h2>

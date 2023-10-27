@@ -3,7 +3,7 @@ import { useState,useEffect } from "react"
 import { patchVotesOnArticle } from "../../api"
 import { CommentPoster } from "./CommentPoster"
 import { Link } from "react-router-dom"
-export const SpecificArticleCard = ({isSuccess,setIsSuccess, user,login,setCommentUpdates, commentUpdates, onlyArticle, id}) =>{
+export const SpecificArticleCard = ({isSuccess,setIsSuccess, setOnlyArticle, user,login,setCommentUpdates, commentUpdates, onlyArticle, id}) =>{
     const [loadingNewComment, setLoadingNewComment] = useState(false) 
     const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}
     const [currentVote,setCurrentVote] = useState(0)
@@ -31,6 +31,7 @@ export const SpecificArticleCard = ({isSuccess,setIsSuccess, user,login,setComme
                 setCurrentVote(0)
             }
     })
+
 
 }},[currentVote,commentUpdates,isSuccess])
     const myObject = onlyArticle

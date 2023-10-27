@@ -20,7 +20,7 @@ export const CommentCards = ({user,login, setErrorMessage,commentUpdates,allComm
             }
         })
         }
-},[commentUpdates,isDeletePressed,commentObject,confirmed,deleteError,login])
+},[commentUpdates,isDeletePressed,commentObject,confirmed,deleteError,login,isSuccess])
 if (!isDeletePressed){
     return  (<ul>
         { allComments.map((comment) =>{
