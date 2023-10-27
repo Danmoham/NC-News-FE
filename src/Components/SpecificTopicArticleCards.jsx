@@ -4,7 +4,7 @@ export const SpecificTopicArticleCards = ({finalTopicArticles}) =>{
     return (
         <div>  
         {finalTopicArticles.length > 0  ? ( 
-        <ul>{
+        <ul id="cards">{
          finalTopicArticles.map((article,index) =>{
             const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}
             return (<div className="each-article" key={article.article_id}>

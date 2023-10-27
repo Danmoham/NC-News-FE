@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 export const ArticleCards = ({allArticles}) =>{
-    return (<ul>
+    return (<div ><ul id="cards">
         { allArticles.map((article,index) =>{
             const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}
             return (<div className="each-article" key={article.article_id}>
@@ -15,5 +15,5 @@ export const ArticleCards = ({allArticles}) =>{
             <Link to={`/articles/ArticleIdSelector/${article.article_id}`}><b>Click here to interact with the full article and the comments on the article</b></Link>
             </div>)
         })} 
-    </ul>)
+    </ul></div>)
 }

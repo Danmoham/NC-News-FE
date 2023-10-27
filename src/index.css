@@ -2,6 +2,7 @@
     padding: 20px;
 }
 img{
+    max-width: 30%;
     height: 300px;
 }
 
@@ -291,7 +292,8 @@ label{
 img{
     border-radius: 20px;
     max-width: 100%;
-    height: auto;
+    height: 300px;
+    
 }
 .date{
     font-size: 12px;
@@ -304,4 +306,14 @@ img{
 #myTopicBody{
     margin-left: 500px;
     margin-right: 500px;
+}
+#cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1400px;
+    padding-left: 10%;
+    padding-right: 10%;
+
 }
