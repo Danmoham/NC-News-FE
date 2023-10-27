@@ -18,6 +18,7 @@ function App() {
     <Header/>
     <div id="mainDiv">
     < NavBar login={login} setLogin={setLogin} topic={topic} setTopic={setTopic}/>
+    </div>
     <Routes>
       <Route path="/" element={<Articles/>}/>
       <Route path='/articles' element={<Articles/>}/>
@@ -29,7 +30,6 @@ function App() {
       <Route path="Topics/all topics" element={<Articles/>}/>
       <Route path="/*" element={<ErrorPage/>} />
     </Routes>
-  </div>
   </div>
   )
 }
