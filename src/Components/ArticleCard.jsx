@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 export const ArticleCards = ({allArticles}) =>{
-    return (<div ><ul id="cards">
+    return (<div><ul id="cards">
         { allArticles.map((article,index) =>{
             const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}
             return (<div className="each-article" key={article.article_id}>

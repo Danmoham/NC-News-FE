@@ -1,5 +1,6 @@
 .each-article{
     padding: 20px;
+    width: 400px;
 }
 
 
@@ -315,3 +316,4 @@ img{
     padding-right: 10%;
 
 }
+

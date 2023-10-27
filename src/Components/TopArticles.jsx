@@ -11,7 +11,7 @@ export const TopArticles = () =>{
         })
     },[])
     if (!isLoading){
-    return <div><h2>The Top 5 Articles!</h2>
+    return <div><h2>The Top 10 Articles!</h2>
         <main>{<ArticleCards allArticles={allArticles}/>}</main>
     </div>
     }else{
