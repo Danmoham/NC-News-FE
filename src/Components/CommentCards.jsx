@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { deleteComment } from "../../api"
-export const CommentCards = ({user,login, setErrorMessage,commentUpdates,allComments,isSuccess,setIsSuccess}) =>{
+export const CommentCards = ({specificUser,login, setErrorMessage,commentUpdates,allComments,isSuccess,setIsSuccess}) =>{
     const [isDeletePressed,setIsDeletePressed] = useState(false)
     const [commentObject,setCommentObject] = useState({})
     const [confirmed,setConfirmed] = useState(false)
@@ -24,7 +24,7 @@ export const CommentCards = ({user,login, setErrorMessage,commentUpdates,allComm
 if (!isDeletePressed){
     return  (<ul>
         { allComments.map((comment) =>{
-            if (comment.author === user){
+            if (comment.author === specificUser){
             const dateFormatter = (created_at) => {return new Date(created_at).toLocaleDateString()}
             return (<div className="each-comment" key={comment.comment_id}>
             <div id="margin-div">

@@ -13,11 +13,11 @@ import { TopArticles } from './Components/TopArticles'
 function App() {
   const [login,setLogin] = useState(false)
   const [topic,setTopic] = useState("")
-  const [user,setUser] = useState("grumpy19")
+  const [specificUser,setSpecificUser] = useState("")
   return (<div>
     <Header/>
     <div id="mainDiv">
-    < NavBar login={login} setLogin={setLogin} topic={topic} setTopic={setTopic}/>
+    < NavBar login={login} setSpecificUser={setSpecificUser} specificUser={specificUser} setLogin={setLogin} topic={topic} setTopic={setTopic}/>
     </div>
     <Routes>
       <Route path="/" element={<Articles/>}/>
@@ -25,8 +25,8 @@ function App() {
       <Route path="/Home" element={<Articles/>} />
       <Route path='/TopArticles' element={<TopArticles/>} />
       <Route path='/Articles/ArticleIdSelector' element={<ArticleIdSelector/>} />
-      <Route path="/Articles/ArticleIdSelector/:final_id" element={<ArticleById setLogin={setLogin} user={user}login={login}/>} />
-      <Route path="/Articles/:final_id" element={<ArticleById setLogin={setLogin} user={user}login={login}/>} />
+      <Route path="/Articles/ArticleIdSelector/:final_id" element={<ArticleById setLogin={setLogin} specificUser={specificUser}login={login}/>} />
+      <Route path="/Articles/:final_id" element={<ArticleById setLogin={setLogin} specificUser={specificUser}login={login}/>} />
       <Route path="/topics/:topic_name" element={<SpecificTopic topic={topic} setTopic={setTopic}/>}/> 
       <Route path="Topics/all topics" element={<Articles/>}/>
       <Route path="/*" element={<ErrorPage/>} />

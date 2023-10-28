@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react"
 import { postComments } from "../../api"
-export const CommentPoster = ({setIsSuccess,login,loadingNewComment,setLoadingNewComment, id,setCommentUpdates}) =>{
+export const CommentPoster = ({specificUser,setIsSuccess,login,loadingNewComment,setLoadingNewComment, id,setCommentUpdates}) =>{
      const [currentInput, setCurrentInput] =useState("")
      const [finalInput,setFinalInput] =useState("")
      const [errorMessage,setErrorMessage] = useState("")
@@ -22,7 +22,7 @@ export const CommentPoster = ({setIsSuccess,login,loadingNewComment,setLoadingNe
      useEffect(() =>{
           if(proceed){
           setLoadingNewComment(true)
-          postComments(id,finalInput).then((res) =>{
+          postComments(id,finalInput,specificUser).then((res) =>{
           if (res.status === 201){
                setLoadingNewComment(false)
                setCompleteMessage(`This has now been posted`)

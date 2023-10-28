@@ -1,8 +1,9 @@
-import { useParams } from 'react-router-dom';
+import { useParams,Link } from 'react-router-dom';
 import { getSpecifcArticle } from '../../api';
 import { useState,useEffect } from 'react';
 import { SpecificArticleCard } from './SpecificArticleCard';
-export const ArticleById = ({setLogin,login,user}) =>{
+
+export const ArticleById = ({setLogin,login,specificUser}) =>{
     let {final_id} = useParams()
     const [commentUpdates,setCommentUpdates] = useState(false)
     const [isSuccess,setIsSuccess] = useState(false)
@@ -22,7 +23,7 @@ export const ArticleById = ({setLogin,login,user}) =>{
         <div>
           {!isLoading ? (
             <div>
-            <main> {<SpecificArticleCard setOnlyArticle={setOnlyArticle} isSuccess={isSuccess} setIsSuccess={setIsSuccess}user={user} login={login} setCommentUpdates={setCommentUpdates} commentUpdates={commentUpdates}id = {id}onlyArticle = {onlyArticle}/>} </main>
+            <main> {<SpecificArticleCard setOnlyArticle={setOnlyArticle} isSuccess={isSuccess} setIsSuccess={setIsSuccess}specificUser={specificUser} login={login} setCommentUpdates={setCommentUpdates} commentUpdates={commentUpdates}id = {id}onlyArticle = {onlyArticle}/>} </main>
             </div>
           ) : (
             <h2>Loading....</h2>
@@ -30,12 +31,12 @@ export const ArticleById = ({setLogin,login,user}) =>{
         </div>
       ); 
           }else{
-            return (<div id="LoginArticle"><h2>Please select the Login button to see this article! You can log in by pressing the button below or the one on the top Left!</h2>
-          <button onClick={((event) =>{
-            event.preventDefault()
-        setLogin(true)
-     })}>Login</button>
-            </div>)
+            return (<div><div id="LoginArticle"><h2>You Are not Logged in, please select the log in button on the top left of the screen and select a user.</h2>
+          <img src="https://media.makeameme.org/created/everybody-log-in.jpg"></img>
+                      </div>
+
+            </div>
+            )
 
           
           }

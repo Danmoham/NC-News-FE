@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { getAllTopics } from '../../api'
 import { useState,useEffect } from 'react'
 import { LoggedIn } from './LoggedIn'
-export const NavBar = ({login,setLogin,topic,setTopic}) =>{
+export const NavBar = ({specificUser,setSpecificUser,login,setLogin,topic,setTopic}) =>{
     const navigate = useNavigate()
     const [myTopics,setMyTopics] = useState([])
     const [getTopic,setGetTopic] = useState("")
@@ -18,7 +18,7 @@ export const NavBar = ({login,setLogin,topic,setTopic}) =>{
 
     },[getTopic])
     return <div id="navBar">
-        <LoggedIn login={login} setLogin={setLogin}/>
+        <LoggedIn  specificUser={specificUser}setSpecificUser={setSpecificUser}login={login} setLogin={setLogin}/>
         <nav >
         <select onChange={((event) =>{
             event.preventDefault()

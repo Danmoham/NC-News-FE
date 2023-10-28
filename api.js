@@ -28,8 +28,8 @@ export const patchVotesOnArticle=(id,num)=>{
         return err.response.status
     })
 }
-export const postComments = (id,input) =>{
-    return NcApi.post(`/articles/${id}/comments`,{username : "grumpy19", body : input}).then((response) =>{
+export const postComments = (id,input,name) =>{
+    return NcApi.post(`/articles/${id}/comments`,{username : name, body : input}).then((response) =>{
         return response
     }).catch((err) =>{
         return err.response
