@@ -22,14 +22,14 @@ export const LoggedIn = ({specificUser,setSpecificUser,login,setLogin}) =>{
     },[login,myUsers,logClick])
    if (login && specificUser.length !== 0 && specificUser !== "select") {
    return (<div><p id="loggedState" ><b>You are Logged in as : {specificUser}</b></p>
-    <button onClick={(() =>{
+    <button id="logOutButton" onClick={(() =>{
         setLogin(false)
         setLogClick(false)
         setSpecificUser("")
     })}>Log out</button>
     </div>)
 }else if (logClick){
- return <div><label>Select your user:</label> 
+ return <div id="selectUser"><label>Select your user:</label> 
  <select onChange={((event) =>{
     event.preventDefault()
     setSpecificUser(event.target.value)

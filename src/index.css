@@ -344,3 +344,9 @@ img{
     text-align: center;
     margin-top: 20px;
 }
+#selectUser{
+    margin-bottom: 30px;
+}
+#logOutButton{
+    margin-bottom: 15px;
+}
