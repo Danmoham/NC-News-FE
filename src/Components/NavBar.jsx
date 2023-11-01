@@ -34,6 +34,7 @@ export const NavBar = ({specificUser,setSpecificUser,login,setLogin,topic,setTop
         </select>
      <Link id="midNav" to="/articles"><button className='navBut'>All Articles</button></Link>
      <Link to="/topArticles/"><button className='navBut'>Best Articles</button></Link>
+     <Link to="/createArticle"><button className='navBut'>Create Article</button></Link>
      <Link to="/articles/ArticleIdSelector"><button className='navBut'> Search Article By Id</button></Link> 
         </nav>
     </div>

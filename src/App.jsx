@@ -10,6 +10,7 @@ import { SpecificTopic } from './Components/SpecificTopic'
 import { SortBy } from './Components/SortBy'
 import { ErrorPage } from './ErrorPage'
 import { TopArticles } from './Components/TopArticles'
+import { CreateArticle } from './Components/CreateArticle'
 function App() {
   const [login,setLogin] = useState(false)
   const [topic,setTopic] = useState("")
@@ -29,6 +30,7 @@ function App() {
       <Route path="/Articles/:final_id" element={<ArticleById setLogin={setLogin} specificUser={specificUser}login={login}/>} />
       <Route path="/topics/:topic_name" element={<SpecificTopic topic={topic} setTopic={setTopic}/>}/> 
       <Route path="Topics/all topics" element={<Articles/>}/>
+      <Route path="/createArticle" element={<CreateArticle specificUser={specificUser} login={login}/>}/>
       <Route path="/*" element={<ErrorPage/>} />
     </Routes>
   </div>

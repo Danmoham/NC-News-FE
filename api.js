@@ -87,3 +87,12 @@ export const getBestArticles = () =>{
         return err.response
     })  
 }
+
+export const postNewArticle = (article) =>{
+    return NcApi.post(`/articles`,article).then((response) =>{
+        console.log(response)
+        return response
+    }).catch((err) =>{
+        return err
+    })
+}

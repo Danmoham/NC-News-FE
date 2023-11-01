@@ -350,3 +350,40 @@ img{
 #logOutButton{
     margin-bottom: 15px;
 }
+#myBody{
+    text-align: left;
+    height: 150px;
+}
+#createForm{
+display: flex;
+flex-direction: column;
+align-content: center;
+text-align: center;
+flex-wrap: wrap;
+margin: auto;
+}
+.inputArticle{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+textarea{
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+.nonErrorCreate{
+    text-align: center;
+}
+#createButton{
+    width: 150px;
+}
+img{
+    max-height: 600px;
+}
