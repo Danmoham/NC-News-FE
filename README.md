@@ -7,3 +7,4 @@ If you wish to clone this project please follow the below:
 2. ensure node v14 is installed, if not npm install node
 3. npm run dev and open up on your local browser. 
 
+Please note it needs to load in all the API resources so there is a short wait on the first render.
